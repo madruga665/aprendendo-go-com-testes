@@ -1,25 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+const prefixMessage = "Hello, "
+const portuguesePrefixMessage = "Olá, "
+const spanishPrefixMessage = "Hola, "
+
+func prefixOfMessage(language string) (prefix string) {
+
+	switch language {
+	case "portuguese":
+		prefix = portuguesePrefixMessage
+	case "spanish":
+		prefix = spanishPrefixMessage
+	default:
+		prefix = prefixMessage
+	}
+
+	return
+}
 
 func hello(name string, language string) string {
-	const prefixMessage = "Hello, "
-	const portuguesePrefixMessage = "Olá, "
-	const spanishPrefixMessage = "Hola, "
 
 	if name == "" {
 		name = "world"
 	}
 
-	if language == "portuguese" {
-		return portuguesePrefixMessage + name
-	}
-
-	if language == "spanish" {
-		return spanishPrefixMessage + name
-	}
-
-	return prefixMessage + name
+	return prefixOfMessage(language) + name
 }
 
 func main() {
