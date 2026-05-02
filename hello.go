@@ -3,7 +3,9 @@ package main
 import "fmt"
 
 func hello(name string) string {
-	return "Olá, " + name
+	const prefixMessage = "Olá, "
+
+	return prefixMessage + name
 }
 
 func main() {
