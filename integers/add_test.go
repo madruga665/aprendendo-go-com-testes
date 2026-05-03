@@ -2,7 +2,7 @@ package integers
 
 import "testing"
 
-func testAdd(t *testing.T) {
+func TestAdd(t *testing.T) {
 
 	t.Run("sum numbers", func(t *testing.T) {
 		result := add(2, 2)
