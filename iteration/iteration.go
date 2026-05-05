@@ -1,11 +1,9 @@
 package iteration
 
-const interationQuantity = 5
-
-func repeat(char string) string {
+func repeat(char string, iterationQuantity int) string {
 	var result string
 
-	for i := 0; i < interationQuantity; i++ {
+	for i := 0; i < iterationQuantity; i++ {
 		result += char
 	}
 
