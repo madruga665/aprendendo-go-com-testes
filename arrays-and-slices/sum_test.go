@@ -1,6 +1,9 @@
 package arraysandslices
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestSum(t *testing.T) {
 	t.Run("array 6 numbers", func(t *testing.T) {
@@ -23,4 +26,24 @@ func TestSum(t *testing.T) {
 		}
 	})
 
+}
+
+func TestSumAllRest(t *testing.T) {
+	t.Run(" sum slices", func(t *testing.T) {
+		result := sumAllRest([]int{1, 2}, []int{0, 9})
+		expected := []int{2, 9}
+
+		if !reflect.DeepEqual(result, expected) {
+			t.Errorf("result %v expected %v", result, expected)
+		}
+	})
+
+	t.Run(" sum empty slices", func(t *testing.T) {
+		result := sumAllRest([]int{}, []int{3, 4, 5})
+		expected := []int{0, 9}
+
+		if !reflect.DeepEqual(result, expected) {
+			t.Errorf("result %v expected %v", result, expected)
+		}
+	})
 }
